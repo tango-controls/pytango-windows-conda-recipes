@@ -1,0 +1,33 @@
+{% set version = "9.3.1.dev1" %}
+
+package:
+  name: pytango
+  version: {{ version }}
+  
+#source:
+#  git_url: https://github.com/tango-cs/pytango.git
+#  git_tag: v{{ version }}
+
+build:
+  number: 1
+  features: [pytango-static]
+
+requirements:
+  host:
+    - python
+    - numpy
+  run:
+    - {{ pin_compatible('numpy', min_pin='x') }}  # Loose pinning
+    - python
+    - six
+    - enum34 # [py27]
+
+test:
+  imports:
+    - PyTango
+    - tango
+
+about:
+  home: http://pytango.rtfd.io
+  license: GNU Library or Lesser General Public License (LGPL)
+  summary: 'Python binding for the TANGO control system'
