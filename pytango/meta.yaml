@@ -1,4 +1,4 @@
-{% set version = "9.3.1.dev1" %}
+{% set version = "9.3.1" %}
 
 package:
   name: pytango
@@ -10,7 +10,6 @@ package:
 
 build:
   number: 1
-  features: [pytango-static]
 
 requirements:
   host:
